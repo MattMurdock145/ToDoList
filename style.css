@@ -1,0 +1,164 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+header h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#taskInput {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    border-color: #3498db;
+}
+
+#addTaskBtn {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+#addTaskBtn:hover {
+    background-color: #2980b9;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    background-color: #ecf0f1;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#taskList li.completed {
+    text-decoration: line-through;
+    color: #7f8c8d;
+    background-color: #e0e6e8;
+    opacity: 0.7;
+}
+
+#taskList li .task-text {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+#taskList li .actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 0.9em;
+    transition: color 0.3s, opacity 0.3s; /* Added opacity transition */
+}
+
+#taskList li .actions .delete-btn {
+    color: #e74c3c;
+    opacity: 0.6; /* Make it less prominent initially */
+}
+
+#taskList li:hover .actions .delete-btn {
+    opacity: 1; /* Show delete button more clearly on hover */
+}
+
+#taskList li .actions .delete-btn:hover { /* Keep specific hover for color change if desired */
+    color: #c0392b;
+}
+
+
+footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+#clearCompletedBtn {
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#clearCompletedBtn:hover {
+    background-color: #c0392b;
+}
+
+/* Basic animation for adding items */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#taskList li.new-item-animation {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.empty-state-message {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 20px;
+    font-style: italic;
+}
+
+#taskInput::placeholder {
+    color: #bbb;
+}
+
+/* Add a subtle focus style to list items for keyboard navigation (though not fully implemented) */
+#taskList li:focus-within {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Todolist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Todolist</h1>
+            <div class="input-area">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+        </header>
+        <main>
+            <ul id="taskList">
+                <!-- Tasks will be added here by JavaScript -->
+            </ul>
+        </main>
+        <footer>
+            <p>You have <span id="taskCount">0</span> pending tasks.</p>
+            <button id="clearCompletedBtn">Clear Completed</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
